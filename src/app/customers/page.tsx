@@ -1,11 +1,12 @@
 
 "use client";
 
-
+import styles from '@/css/Customers.module.css';
 import { useState } from 'react';
 import { createCustomer } from '@/utils/api';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from '@/css/Customers.module.css'; 
+
+
 
 export default function Customers() {
   const [name, setName] = useState('');
@@ -29,8 +30,9 @@ export default function Customers() {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container py-4 text-center">
        <h1>Barberfu</h1> 
+       <br />
       <h1>Register Customer</h1>
       <form onSubmit={handleFormSubmit} className={styles.form}>
         <div className="mb-3">

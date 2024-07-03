@@ -1,0 +1,13 @@
+
+.form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+  }
+  

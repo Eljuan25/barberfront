@@ -1,8 +1,11 @@
-// src/app/customers/page.jsx
+
 "use client";
+
 
 import { useState } from 'react';
 import { createCustomer } from '@/utils/api';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from '@/css/Customers.module.css'; 
 
 export default function Customers() {
   const [name, setName] = useState('');
@@ -26,34 +29,46 @@ export default function Customers() {
   };
 
   return (
-    <div>
+    <div className="container py-4">
+       <h1>Barberfu</h1> 
       <h1>Register Customer</h1>
-      <form onSubmit={handleFormSubmit}>
-        <label>Name:</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        /><br />
-        <label>Phone:</label>
-        <input
-          type="text"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        /><br />
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br />
-        <button type="submit">Register</button>
+      <form onSubmit={handleFormSubmit} className={styles.form}>
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">Name:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="phone" className="form-label">Phone:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">Email:</label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Register</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className={styles.message}>{message}</p>}
     </div>
   );
 }
